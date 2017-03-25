@@ -37,7 +37,8 @@
     "query-string": "^4.3.2",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "regenerator-runtime": "^0.10.3"
+    "regenerator-runtime": "^0.10.3",
+    "rimraf": "^2.6.1"
   },
   "peerDependencies": {
     "redux": "*"
