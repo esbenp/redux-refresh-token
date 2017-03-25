@@ -118,7 +118,9 @@ return fetch(`${API_ROOT}${endpoint}${querystring}`, {
   credentials: "same-origin"
 })
 // This step will convert fetch's response into a FSA style action
-// This is needed in the attempt method
+// This is needed in the attempt method. If you use redux-api-middleware 
+// the middleware already returns FSA style actions, so you do not need 
+// this step.
 .then(createFSAConverter(successType, failureType))
 .then(
   attemptRefresh({
