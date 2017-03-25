@@ -1,5 +1,4 @@
 # redux-refresh-token
-=====================
 
 [![Build Status](https://travis-ci.org/esbenp/redux-refresh-token.svg?branch=master)](https://travis-ci.org/esbenp/redux-refresh-token) [![Coverage Status](https://coveralls.io/repos/esbenp/redux-refresh-token/badge.svg?branch=master&service=github)](https://coveralls.io/github/esbenp/redux-refresh-token?branch=master)
 
@@ -50,7 +49,7 @@ or not it should try a refresh. It will always attempt a refresh on `401` status
 ## Installation
 
 You will need to install a reducer under the key `tokenRefresh`. If you want to change the key 
-you have to pass the `refreshReducerKey` setting to `attemptRefresh`.
+you have to pass the [`refreshReducerKey` setting to `attemptRefresh`](https://github.com/esbenp/redux-refresh-token#refreshreducerkey-string).
 
 ```javascript
 import { reducer } from 'redux-refresh-token'
@@ -134,7 +133,7 @@ return fetch(`${API_ROOT}${endpoint}${querystring}`, {
 
 The `attemptRefresh` has various parameters to adjust to different types of API middleware.
 
-### failure **required** (action creator)
+### failure (action creator) (required)
 
 Should be an actionCreator. This action will be dispatched whenever the refresh failed. 
 Usually this would be a logout action.
@@ -171,7 +170,7 @@ The default behaviour is to check like below
 return action["Call API"].endpoint === refreshAction["Call API"].endpoint;
 ```
 
-### refreshActionCreator **required** (action creator)
+### refreshActionCreator (action creator) (required)
 
 An action creator that creates the action that will request the API for a new token.
 
@@ -216,7 +215,7 @@ export const setAccessToken = ({ access_token, expires_in }) => ({
 })
 ```
 
-### token **Required** (string)
+### token (string) (required)
 
 The current access token from the redux store state.
 
