@@ -17,6 +17,10 @@ This library provides a function you can plug into your API call. If the API cal
 token probably expired. This library will try to refresh the token. Whilst refreshing it will queue up all API calls. If the 
 refresh was successful it will retry all the queued calls. If it was not successful it will log out the user.
 
+## Full example app
+
+[I have made a small example app here](https://github.com/esbenp/redux-refresh-token-example)
+
 ## Prerequisites
 
 Your API middleware must return FSA-style responses. There is a great description about [flux-standard-actions here](https://github.com/acdlite/flux-standard-action). 
