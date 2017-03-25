@@ -48,6 +48,12 @@ or not it should try a refresh. It will always attempt a refresh on `401` status
 
 ## Installation
 
+First install with npm
+
+```
+npm install --save redux-refresh-token
+```
+
 You will need to install a reducer under the key `tokenRefresh`. If you want to change the key 
 you have to pass the [`refreshReducerKey` setting to `attemptRefresh`](https://github.com/esbenp/redux-refresh-token#refreshreducerkey-string).
 
