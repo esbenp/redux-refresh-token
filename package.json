@@ -1,0 +1,49 @@
+{
+  "name": "redux-refresh-token",
+  "version": "0.1.0",
+  "description": "A promise callback to refresh access tokens when using RSAA",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib  --ignore '**/*.test.js'",
+    "clean": "rimraf lib coverage",
+    "prepublish": "npm test && npm run clean && npm run build",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esbenp/redux-refresh-token.git"
+  },
+  "keywords": [
+    "redux",
+    "refresh",
+    "token",
+    "token",
+    "management",
+    "oauth"
+  ],
+  "author": "Esben Petersen <esbenspetersen@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/esbenp/redux-refresh-token/issues"
+  },
+  "homepage": "https://github.com/esbenp/redux-refresh-token#readme",
+  "devDependencies": {
+    "babel-jest": "^19.0.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "jest": "^19.0.2",
+    "lodash": "^4.17.4",
+    "query-string": "^4.3.2",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "regenerator-runtime": "^0.10.3"
+  },
+  "peerDependencies": {
+    "redux": "*"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "lib/"
+  ]
+}
