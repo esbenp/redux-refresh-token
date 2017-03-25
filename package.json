@@ -29,6 +29,7 @@
   "homepage": "https://github.com/esbenp/redux-refresh-token#readme",
   "devDependencies": {
     "babel": "^6.23.0",
+    "babel-cli": "^6.24.0",
     "babel-jest": "^19.0.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
