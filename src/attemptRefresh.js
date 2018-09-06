@@ -102,19 +102,44 @@ const defaultIsRefreshCall = (action, refreshAction) => {
 
 export const createFSAConverter = (successType, failureType) => {
   return response => {
-    if (!response.ok) {
-      return {
-        error: true,
-        payload: {
-          status: response.status
-        },
-        type: failureType
-      }
-    }
-
-    const contentType = response.headers.get("Content-Type");
+    const contentType = response.headers && response.headers.get("Content-Type");
     const emptyCodes = [204, 205];
 
+    if (!response.ok) {
+
+      if (
+        contentType &&
+        contentType.indexOf("json") !== -1
+      ) {
+        
+        const creatFailureType = async (response) => {
+          const jsonResponse = await response.json();
+          const payload =
+            Object.assign({
+                status: response.status
+              },
+              jsonResponse
+            );
+
+          return {
+            payload,
+            error: true,
+            type: failureType
+          };
+        }
+
+        return creatFailureType(response)
+      } else {
+        return {
+          error: true,
+          payload: {
+            status: response.status
+          },
+          type: failureType
+        }
+      }
+    }
+  
     const createSuccessType = payload => ({
       payload,
       type: successType
