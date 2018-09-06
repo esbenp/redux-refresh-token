@@ -108,7 +108,6 @@ export const createFSAConverter = (successType, failureType) => {
     if (!response.ok) {
 
       if (
-        emptyCodes.indexOf(response.status) === -1 &&
         contentType &&
         contentType.indexOf("json") !== -1
       ) {
